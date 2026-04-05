@@ -4,4 +4,4 @@ metadata:
   name: ml-platform-templates
 spec:
   targets:
-    - ./templates/ml-api-template/template.yaml
+    - ./templates/ml-template.yaml
