@@ -1,0 +1,25 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: ml-service-template
+  title: Deploy ML Service
+  description: Create a new ML service with Kubernetes setup
+spec:
+  owner: yashaswi
+  type: service
+
+  parameters:
+    - title: Service Info
+      required:
+        - name
+      properties:
+        name:
+          type: string
+          title: Service Name
+
+  steps:
+    - id: log
+      name: Log Input
+      action: debug:log
+      input:
+        message: "Creating service ${{ parameters.name }}"
