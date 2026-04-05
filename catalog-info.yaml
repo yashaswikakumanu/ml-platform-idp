@@ -1,13 +1,7 @@
 apiVersion: backstage.io/v1alpha1
-kind: Component
+kind: Location
 metadata:
-  name: ml-platform-idp
-  description: An example of a Backstage application.
-  # Example for optional annotations
-  # annotations:
-  #   github.com/project-slug: backstage/backstage
-  #   backstage.io/techdocs-ref: dir:.
+  name: ml-platform-templates
 spec:
-  type: website
-  owner: yashaswi
-  lifecycle: experimental
+  targets:
+    - ./templates/ml-api-template/template.yaml
