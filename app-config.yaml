@@ -85,7 +85,7 @@ catalog:
     entityFilename: catalog-info.yaml
     pullRequestBranchName: backstage-integration
   rules:
-    - allow: [Component, System, API, Resource, Location]
+    - allow: [Component, System, API, Resource, Location, Template]
   locations:
     - type: url
       target: https://raw.githubusercontent.com/yashaswikakumanu/ml-platform-idp/main/templates/ml-api-template/template.yaml
