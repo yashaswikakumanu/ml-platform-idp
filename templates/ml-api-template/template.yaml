@@ -2,8 +2,8 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: ml-service-template
-  title: Deploy ML Service
-  description: Create a new ML service with Kubernetes setup
+  title: 🚀 Deploy ML Service
+  description: Create a new ML service with FastAPI + Kubernetes
 spec:
   owner: yashaswi
   type: service
@@ -18,8 +18,16 @@ spec:
           title: Service Name
 
   steps:
+    - id: fetch
+      name: Generate project files
+      action: fetch:template
+      input:
+        url: file:./files
+        values:
+          name: ${{ parameters.name }}
+
     - id: log
-      name: Log Input
+      name: Done
       action: debug:log
       input:
-        message: "Creating service ${{ parameters.name }}"
+        message: "ML service ${{ parameters.name }} created!"

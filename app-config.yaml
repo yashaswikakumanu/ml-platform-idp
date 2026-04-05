@@ -15,6 +15,8 @@ organization:
   name: My Company
 
 backend:
+  auth:
+    dangerouslyDisableDefaultAuthPolicy: true
   # Used for enabling authentication, secret is shared by all backend plugins
   # See https://backstage.io/docs/auth/service-to-service-auth for
   # information on the format
@@ -75,7 +77,8 @@ auth:
   # see https://backstage.io/docs/auth/ to learn about auth providers
   providers:
     # See https://backstage.io/docs/auth/guest/provider
-    guest: {}
+    guest: 
+      dangerouslyAllowOutsideDevelopment: true
 
 scaffolder:
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
@@ -87,8 +90,10 @@ catalog:
   rules:
     - allow: [Component, System, API, Resource, Location, Template]
   locations:
-    - type: url
-      target: https://raw.githubusercontent.com/yashaswikakumanu/ml-platform-idp/main/templates/ml-api-template/template.yaml
+    - type: file
+      target: ../../templates/ml-api-template/template.yaml
+      rules:
+        - allow: [Template]
     # Local example data, file locations are relative to the backend process, typically `packages/backend`
     - type: file
       target: ../../examples/entities.yaml
