@@ -22,7 +22,7 @@ spec:
       name: Generate project files
       action: fetch:template
       input:
-        url: file:./files
+        url: ./files
         values:
           name: ${{ parameters.name }}
 

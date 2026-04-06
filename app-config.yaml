@@ -69,7 +69,7 @@ proxy:
 techdocs:
   builder: 'local' # Alternatives - 'external'
   generator:
-    runIn: 'docker' # Alternatives - 'local'
+    runIn: 'local' # Alternatives - 'local'
   publisher:
     type: 'local' # Alternatives - 'googleGcs' or 'awsS3'. Read documentation for using alternatives.
 
@@ -81,6 +81,8 @@ auth:
       dangerouslyAllowOutsideDevelopment: true
 
 scaffolder:
+  taskBroker:
+    type: 'local'
   # see https://backstage.io/docs/features/software-templates/configuration for software template options
 
 catalog:
